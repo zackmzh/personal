@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-pull-md-2">
+      <img [src]='selectedProduct.imgUrl' alt="Image" style="border:1px solid lightgray;height:400px;width:370px;">
+    </div>
+
+    <div class="col-md-4" style="text-align: center">
+      <section>
+        <h3>{{selectedProduct.name}}</h3>
+        <label for="price">Price:  </label>
+        <span id="price" style="font-size: x-large">{{selectedProduct.price| currency:'USD':'$'}}</span>
+      </section>
+
+      <section>
+        <form>
+          <div class="form-group">
+            <label for="quan">Quantity: </label>
+            <input type='number' id="quan"  name="quan" required typeof=number class="form-control" [(ngModel)]="quantity">
+          </div>
+          <button type="submit" class="btn btn-success" (click)="addToChart()">Add to Chart</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
+
+

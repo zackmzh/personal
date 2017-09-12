@@ -1,0 +1,26 @@
+
+
+
+<div class="container">
+  <h2>Shopping Cart</h2>
+  <hr>
+  <section *ngFor="let product of productList" class="row" style="border-bottom: 1px solid lightblue">
+    <div class="col-md-4">
+      <img src="{{product.imgUrl}}" alt="img" style="height:100px;width:90px;">
+    </div>
+    <div class="col-md-5">
+      <label>Name: </label>{{product.name}}<br>
+      <label>Price: </label>{{product.price}}<br>
+      <label>Quantity: </label>{{product.quantity}}<br>
+    </div>
+    <div>
+      <ul>
+        <li (click)="cancel(product)" style="cursor: pointer">Cancel</li>
+        <li>Edit</li>
+      </ul>
+    </div>
+  </section>
+  <br>
+  <hr>
+  <label>Total: </label>{{totalPrice | currency:"USD":'$'}}
+</div>
